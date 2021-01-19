@@ -19,40 +19,40 @@ const Person = mongoose.model('Person', personSchema);
 
 // Create first record in a Person Model
 
-// const firstPerson = new Person({
-//     name: 'Ahmed',
-//     age: 29,
-//     favoriteFoods: ['Orange', 'Frawla']
-// })
+const firstPerson = new Person({
+    name: 'Ahmed',
+    age: 29,
+    favoriteFoods: ['Orange', 'Frawla']
+})
 
-// firstPerson.save((err, data) => {
-//     err ? console.error(err) : console.log(`${firstPerson.name} data is saved`)
-// })
+firstPerson.save((err, data) => {
+    err ? console.error(err) : console.log(`${firstPerson.name} data is saved`)
+})
 
 // Create Many record in a Person Model
 
-// Person.create([
-//     {
-//         name: 'Slim',
-//         age: 32,
-//         favoriteFoods: ['Orange', 'Frawla']
-//     },
+Person.create([
+    {
+        name: 'Slim',
+        age: 32,
+        favoriteFoods: ['Orange', 'Frawla']
+    },
 
-//     {
-//         name: 'Tarek',
-//         age: 26,
-//         favoriteFoods: ['Banane']
-//     },
+    {
+        name: 'Tarek',
+        age: 26,
+        favoriteFoods: ['Banane']
+    },
 
-//     {
-//         name: 'Hend',
-//         age: 23,
-//         favoriteFoods: ['Manga', 'Kiwi']
-//     }
-// ], err => {
-//     err ? console.error(err) : console.log('Your Records are Added Successfuly')
-// }
-// )
+    {
+        name: 'Hend',
+        age: 23,
+        favoriteFoods: ['Manga', 'Kiwi']
+    }
+], err => {
+    err ? console.error(err) : console.log('Your Records are Added Successfuly')
+}
+)
 
 // Find all the people having a given name
 
@@ -68,20 +68,20 @@ Person.findOne({ favoriteFoods: 'Frawla' }, (err, data) => {
 
 // Find a Model by ID
 
-// Person.findById("60075f6af7a2300b381dc9a5", (err, data) => {
-//     err ? console.error(err) : console.log("we find the person with ID:" + data._id)
-// })
+Person.findById("60075f6af7a2300b381dc9a5", (err, data) => {
+    err ? console.error(err) : console.log("we find the person with ID:" + data._id)
+})
 
 // Find and update a Model
 
-// Person.findByIdAndUpdate("60075f6af7a2300b381dc9a5", { $push: { favoriteFoods: "hamburger" } }, (err, data) => {
-//     if (err) { console.error(err); }
-//     else {
-//         data.save((err, doc) => {
-//             err ? console.error(err) : console.log('Your Data was Updated' + doc.favoriteFoods);
-//         })
-//     }
-// })
+Person.findByIdAndUpdate("60075f6af7a2300b381dc9a5", { $push: { favoriteFoods: "hamburger" } }, (err, data) => {
+    if (err) { console.error(err); }
+    else {
+        data.save((err, doc) => {
+            err ? console.error(err) : console.log('Your Data was Updated' + doc.favoriteFoods);
+        })
+    }
+})
 
 // Find One and Update 
 
