@@ -91,9 +91,9 @@ Person.findOneAndUpdate({ name: "Hend" }, { age: '20' }, { new: true }, (err, da
 
 // Find by Id and Delete the document
 
-// Person.findByIdAndRemove("60075f6af7a2300b381dc9a5", (err, data) => {
-//     err ? console.error(err) : console.log(data._id + ' Document removed')
-// })
+Person.findByIdAndRemove("60075f6af7a2300b381dc9a5", (err, data) => {
+    err ? console.error(err) : console.log(data._id + ' Document removed')
+})
 
 //Delete Many Documents with model.remove()
 
